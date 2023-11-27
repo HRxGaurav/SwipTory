@@ -16,6 +16,7 @@ import crossButton from '../../assets/icons/crossButton.svg';
 import Cookies from "js-cookie";
 import getStoryById from "../../APIs/getStoryById.js";
 import checkLoggedin from "../../APIs/checkLoggedin.js";
+import IsMobileView from "../../Utilities/IsMobileView.js";
 
 
 const ViewStoryModalViaLink =() =>{
@@ -207,8 +208,8 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
     return ReactDOM.createPortal(
         <>
         
-            <div className={style.modalBackground} >
-                <img src={prevSlideButton} alt='prevSlideButton' style={{marginRight:"140px"}} onClick={prevSlide}/>
+        {!IsMobileView() ? <div className={style.modalBackground} >
+                <img src={prevSlideButton} alt='prevSlideButton' style={{marginRight:"140px"}}  onClick={prevSlide} className={style.slideButton}/>
                 <div className={style.modalContainer} >
 
                     <div className={style.progressBarFlex}>
@@ -241,8 +242,48 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
                     <img onClick={Like} src={likeState.includes(addedBy) ? likeRedButton : likeWhiteButton} alt="likeWhiteButton" className={style.likeButton}/>
                     <div className={style.likeCount}> {likeState.length}</div>
                 </div>
-                        <img src={nextSlideButton} alt='nextSlideButton' style={{marginLeft:"140px"}} onClick={nextSlide}/>
+                        <img src={nextSlideButton} alt='nextSlideButton' style={{marginLeft:"140px"}} onClick={nextSlide} className={style.slideButton}/>
             </div>
+
+            :
+
+
+            <div className={style.modalBackgroundMobile} >
+                <img src={prevSlideButton} alt='prevSlideButton' style={{marginRight:"140px"}}  onClick={prevSlide} className={style.slideButton}/>
+                <div className={style.modalContainerMobile} >
+
+                    <div className={style.progressBarFlex}>
+
+                        {slides.map((_, index) => (
+                            <div
+                                key={index}
+                                style={{
+                                    flex: '1',
+                                    height: '4px',
+                                    background: `linear-gradient(to right, #fff ${index === currentStoryIndex ? progress : index > currentStoryIndex ? 0 : 100
+                                        }%, rgba(217, 217, 217, 0.50) ${0}%)`,
+                                }}
+                            />
+                        ))}
+
+                    </div>
+                    <div className={style.imageMobile} style={{
+                        backgroundImage: `linear-gradient(0deg, #000 20%, rgba(0, 0, 0, 0.00) 40%),
+                                      linear-gradient(180deg, #000 14%, rgba(0, 0, 0, 0.00) 30%), 
+                                      url(${slides[currentStoryIndex].imageUrl})`,
+                    }} />
+
+                    <div onClick={closeModal}><img src={crossButton} alt="crossButton" className={style.crossButton} /></div>
+                    <img onClick={Share} src={shareIcon} alt="shareIcon" className={style.shareIcon}/>
+
+                    <div className={style.typoDiv}><div className={style.headingMobile}>{slides[currentStoryIndex].heading}</div>
+                    <div className={style.paraMobile}>{slides[currentStoryIndex].description}</div></div>
+                    <img onClick={Bookmark} src={bookmarkState.includes(addedBy) ? bookmarkBlueButton : bookmark} alt="bookmark" className={style.bookmark}/>
+                    <img onClick={Like} src={likeState.includes(addedBy) ? likeRedButton : likeWhiteButton} alt="likeWhiteButton" className={style.likeButton}/>
+                    <div className={style.likeCount}> {likeState.length}</div>
+                </div>
+                        <img src={nextSlideButton} alt='nextSlideButton' style={{marginLeft:"140px"}} onClick={nextSlide} className={style.slideButton}/>
+            </div>}
 
         </>,
         document.getElementById('portal')
