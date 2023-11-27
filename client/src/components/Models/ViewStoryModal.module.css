@@ -11,6 +11,19 @@
     z-index: 1;
 }
 
+.modalBackgroundMobile {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
 .modalContainer {
     background-color: black;
     width: 339px;
@@ -22,6 +35,18 @@
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+.modalContainerMobile {
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 
@@ -47,6 +72,16 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     border-radius: 10px;
+}
+
+.imageMobile {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .crossButton {
@@ -91,20 +126,49 @@
     font-weight: 700;
 }
 
-.heading{
+.heading {
     margin-top: 40rem;
     z-index: 1;
     color: #FFF;
-font-size: 20px;
-font-weight: 700;
-width: 284.918px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 284.918px;
 }
 
-.para{
+
+.para {
     margin-top: .5rem;
-    width: 284.918px;
+    width: 100%;
     z-index: 1;
     color: #FFF;
-font-size: 10px;
-font-weight: 700;
+    font-size: 10px;
+    font-weight: 700;
+    width: 284.918px;
+}
+
+
+
+.typoDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1;
+    color: #FFF;
+    width: 100%;
+    padding: 0 25px;
+    position: absolute;
+    bottom: 9%;
+
+    .headingMobile {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+
+    .paraMobile {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
 }
