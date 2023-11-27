@@ -22,9 +22,13 @@ import IsMobileView from "../../Utilities/IsMobileView.js";
 const ViewStoryModalViaLink =() =>{
         const [stories, setStories] = useState([])
         const [showViewStoryModal, setViewStoryModal] = useState(false);
+        
 
 
     const { id } = useParams();
+
+    
+    
 
     useEffect(() => {
         // Fetch data when the component mounts
@@ -59,10 +63,18 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
     const [progress, setProgress] = useState(0);
     const [isUserLoggedin,setIsUserLoggedin] = useContext(LogContext);
     const [loginModal, setLoginModal] = useContext(LoginModalContext);
+    const [goFull, setGoFull] = useState(true);
     const duration = 20000;
     const { bookmarks, slides, _id, addedBy, likes}=rawData
     const navigate=useNavigate();
     const length = slides.length;
+
+
+    useEffect(() => {
+        let e = document.getElementById('fullscreen');
+        e?.requestFullscreen();
+      
+      }, [goFull])
 
     useEffect(() => {
         const checkLoggedIn = async () => {
@@ -79,6 +91,7 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
     }, []);
 
     const closeModal = () => {
+        setGoFull(false)
         navigate('/')
         closeModalState(false);
 
@@ -248,7 +261,7 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
             :
 
 
-            <div className={style.modalBackgroundMobile} >
+            <div className={style.modalBackgroundMobile} id="fullscreen">
                 <img src={prevSlideButton} alt='prevSlideButton' style={{marginRight:"140px"}}  onClick={prevSlide} className={style.slideButton}/>
                 <div className={style.modalContainerMobile} >
 
