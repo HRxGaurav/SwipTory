@@ -125,7 +125,7 @@ const Stories = ({category, title}) => {
             {loading ? <Loader/> : <><div className={style.yourStory}>{`Top Stories About ${title} `}</div>
                 <div className={style.main}>
                     {stories.map((story) => (
-                        <StoryCards id={story._id}  imageUrl={story.slides[0].imageUrl} heading={story.slides[0].heading} description={story.slides[0].description} isEditable={story.isEditable} rawData={story} />
+                        <StoryCards id={story._id} key={story._id}  imageUrl={story.slides[0].imageUrl} heading={story.slides[0].heading} description={story.slides[0].description} isEditable={story.isEditable} rawData={story} />
                     ))}
                 </div>
                 {remainStoriesCount > 0 && (

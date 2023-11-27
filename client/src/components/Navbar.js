@@ -115,7 +115,7 @@ const Navbar = () => {
                             <div className={navbar.userName}>{userName}</div>
                         </div>
 
-                        <div className={navbar.addStoryMobile} onClick={() => { setShowStoryPostModal(!showRegisterModal) }}> Your story</div>
+                        <div className={navbar.addStoryMobile} onClick={() => { navigate('/your_story') }}> Your story</div>
                         <div className={navbar.bookmarkMobile} onClick={() => { setShowStoryPostModal(!showRegisterModal) }}> Add story</div>
                         <div className={navbar.bookmarkMobile} onClick={() => (navigate('/bookmark'))}> <img src={bookmarkIcon} alt='bookmark' className={navbar.bookmarkIcon} />Bookmarks</div>
                         <div className={navbar.logoutMobile} onClick={logout}>Logout</div>
