@@ -1,0 +1,252 @@
+.modalBackground {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContainer {
+    width: 624px;
+    height: 482px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 30px 0px rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.modalContainerMobile {
+    width: 257px;
+    height: 482px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 30px 0px rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.crossButton {
+    width: 35.638px;
+    height: 35.638px;
+    border: 2.5px solid red;
+    border-radius: 50%;
+    color: red;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3.7rem;
+    right: 4.5rem;
+    cursor: pointer;
+}
+
+.crossButtonMobile {
+    width: 26px;
+    height: 26px;
+    border: 2.5px solid red;
+    border-radius: 50%;
+    color: red;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+}
+
+.heading {
+    color: #000;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 25px;    
+    font-weight: 700;    
+    margin-top: -20px;
+}
+
+.headingMobile {
+    color: #000;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 18px; 
+    font-weight: 700;  
+    margin-top: -20px;
+}
+
+.inputFields {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4.9rem;
+    
+}
+
+.passwordDiv {
+    margin-top: 3.7rem;
+    position: relative;
+}
+
+.username,
+.password {
+    color: #000;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 20px;
+    
+    font-weight: 700;
+    
+    margin-right: 7.2rem;
+}
+
+.usernameMobile,
+.passwordMobile {
+    color: #000;
+    font-family: DM Sans;
+    font-size: 15px;
+    font-weight: 700;
+    margin-left: 15px;
+}
+
+.usernameInput {
+    width: 245px;
+    height: 35px;
+    border: 1px solid #000;
+    color: #8E8E8E;
+    font-size: 12px;
+    font-weight: 700;
+    padding-left: 0.8rem;
+}
+
+.usernameInputMobile {
+    width: 226px;
+    height: 35px;
+    border: 1px solid #000;
+    color: #8E8E8E;
+    font-size: 12px;
+    font-weight: 700;
+    padding-left: 0.8rem;
+    margin-left: 1.4rem;
+}
+
+.passwordInput {
+    width: 245px;
+    height: 35px;
+    margin-left: .9rem;
+    color: #8E8E8E;
+    font-size: 12px;
+    font-weight: 700;
+    padding-left: 0.8rem;   
+}
+
+.passwordInputMobile {
+    width: 226px;
+    height: 35px;
+    margin-left: 1.4rem;
+    color: #8E8E8E;
+    font-size: 12px;
+    font-weight: 700;
+    padding-left: 0.8rem;   
+}
+
+.invalidDetails {
+    color: #FF0E0E;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 12px; 
+    font-weight: 700;   
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.loginButton {
+    width: 129px;
+    height: 45px;
+    border-radius: 20px;
+    background: #73ABFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 7rem; 
+}
+
+.loginButtonMobile {
+    width: 129px;
+    height: 45px;
+    border-radius: 20px;
+    background: #73ABFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 7rem; 
+}
+
+.registerButton {
+    width: 129px;
+    height: 45px;
+    border-radius: 20px;
+    background: #73ABFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 18px;
+    
+    font-weight: 700;
+    
+    margin-top: 7.2rem;
+}
+
+
+.eyeIcons {
+    position: absolute;
+    right: 7px;
+    transform: translateY(-110%);
+  }
+  
+  .eyeIcons img {
+    width: 24px;
+    height: 24px;
+  }
+
+.eyeIconsMobile {
+    position: absolute;
+    right: 25px;
+    transform: translateY(-110%);
+  }
+  
+  .eyeIconsMobile img {
+    width: 24px;
+    height: 24px;
+  }
+

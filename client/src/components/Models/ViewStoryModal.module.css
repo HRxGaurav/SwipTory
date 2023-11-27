@@ -1,0 +1,110 @@
+.modalBackground {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.modalContainer {
+    background-color: black;
+    width: 339px;
+    height: 605px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 30px 0px rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.progressBarFlex {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 31.66px;
+    width: 100%;
+    gap: 9.23px;
+    padding: 0 15.79px;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.crossButton {
+    z-index: 1;
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    cursor: pointer;
+}
+
+.shareIcon {
+    z-index: 1;
+    position: absolute;
+    top: 10%;
+    right: 6%;
+    cursor: pointer;
+}
+
+.bookmark {
+    z-index: 1;
+    position: absolute;
+    bottom: 4%;
+    left: 15%;
+    cursor: pointer;
+}
+
+.likeButton {
+    z-index: 1;
+    position: absolute;
+    bottom: 4%;
+    right: 15%;
+    cursor: pointer;
+}
+
+.likeCount {
+    z-index: 1;
+    position: absolute;
+    bottom: 5.4%;
+    right: 6.5%;
+    color: #FFF;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.heading{
+    margin-top: 40rem;
+    z-index: 1;
+    color: #FFF;
+font-size: 20px;
+font-weight: 700;
+width: 284.918px;
+}
+
+.para{
+    margin-top: .5rem;
+    width: 284.918px;
+    z-index: 1;
+    color: #FFF;
+font-size: 10px;
+font-weight: 700;
+}

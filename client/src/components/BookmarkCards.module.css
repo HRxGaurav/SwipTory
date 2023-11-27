@@ -1,0 +1,44 @@
+.noCardMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .text {
+        color: #FF7373;;
+        text-align: center;
+        font-size: 3rem;
+        
+        font-weight: 700;
+        
+        margin-top: 3.9rem;
+        margin-bottom: -3rem;
+    }
+    
+    .icon {
+        margin-top: 2rem;
+        width: 35rem;
+        height: 35rem;
+    }
+    
+    .home{
+        margin-right: 3.7rem;
+        width: 13.6rem;
+        height: 4.5rem;
+        border-radius: 2.0rem;
+        background: #FF7373;
+        color: #FFF;
+        text-align: center;
+        font-family: DM Sans;
+        font-size: 1.5rem;
+        
+        font-weight: 700;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer; 
+    }
+}
+
+
+
