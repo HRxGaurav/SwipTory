@@ -78,7 +78,7 @@ const Navbar = () => {
                 </div>
             </div>
                 {(showLoginModal || loginModal) && <LoginModal closeModalState={setShowLoginModal} />}
-                {showRegisterModal && <RegisterModal closeModalState={setShowRegisterModal} />}
+                {showRegisterModal && <RegisterModal closeModalState={setShowRegisterModal} closeModalMobileState={setShowProfile}/>}
                 {showStoryPostModal && <AddStoryModel closeModalState={setShowStoryPostModal} buttonName='Post' />}
                 {showStoryPostModal && <AddStoryMobileModel closeModalState={setShowStoryPostModal} buttonName='Post' />}
 

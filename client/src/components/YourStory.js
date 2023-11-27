@@ -6,6 +6,7 @@ import AddStoryModel from './Models/AddStoryModel';
 import AddStoryMobileModel from './Models/AddStoryMobileModel';
 import ViewStoryModal from './Models/ViewStoryModal';
 import IsMobileView from '../Utilities/IsMobileView'
+import {NoData} from './BookmarkCards'
 
 const StoryCards = ({id, imageUrl,heading, description, isEditable, rawData} ) => {
   const [showEditModal, setShowEditModal] = useState(false);
@@ -112,7 +113,7 @@ const YourStory = () => {
 
   return (
     <>
-      { stories.length>0 &&<><div className={yourStory.yourStory} >Your Stories</div>
+      { stories.length>0 ? <><div className={yourStory.yourStory} >Your Stories</div>
 
         <div className={yourStory.main}>       
           {stories.map((story, index) => (
@@ -123,7 +124,9 @@ const YourStory = () => {
           <div className={yourStory.seeMoreButton} onClick={handleSeeMoreClick}>
             See more
           </div>
-        )}</>}
+        )}</>
+        
+        :<NoData  className={yourStory.noData}topHeading='You have no stories!'/>}
     </>
   );
 };

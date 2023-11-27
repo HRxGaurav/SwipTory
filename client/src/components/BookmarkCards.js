@@ -84,12 +84,12 @@ const StoryCards = ({id, imageUrl,heading, description, isEditable, rawData} ) =
 }
 
 
-const NoData = () => {
+const NoData = ({topHeading}) => {
     const navigate = useNavigate();
   return (
     <>
        <div className={bookmarkCards.noCardMain}>
-       <div className={bookmarkCards.text}>You have no bookmarks!</div>
+       <div className={bookmarkCards.text}>{topHeading}</div>
         <img src={noDataImage} alt='no Bookmark' className={bookmarkCards.icon} />
         <div className={bookmarkCards.home} onClick={()=>(navigate('/'))}> Back to Home</div>
         </div>
@@ -151,9 +151,10 @@ const BookmarkCards = () => {
           <div className={yourStory.seeMoreButton} onClick={handleSeeMoreClick}>
             See more
           </div>
-        )}</> : <NoData/>}
+        )}</> : <NoData topHeading='You have no bookmarks!' />}
     </>
   );
 };
 
 export default BookmarkCards
+export {NoData};

@@ -49,7 +49,7 @@ function RegisterModal({ closeModalState, closeModalMobileState }) {
 
     const closeModal = () => {
         closeModalState(false);
-        closeModalMobileState(false)
+        closeModalMobileState(false);
     };
 
     const togglePasswordVisibility = () => {
@@ -89,6 +89,7 @@ function RegisterModal({ closeModalState, closeModalMobileState }) {
         const result = await registerApi(username, password);
 
         if (result.success) {
+            closeModalMobileState(false);
             closeModalState();
             toast.success("Registered successfully");            
             setIsUserLoggedin(true);
@@ -103,7 +104,7 @@ function RegisterModal({ closeModalState, closeModalMobileState }) {
 
     return ReactDOM.createPortal(
         <>
-            {!IsMobileView ? <div className={loginModal.modalBackground} onClick={closeModal}>
+            {!IsMobileView() ? <div className={loginModal.modalBackground} onClick={closeModal}>
                 <div className={loginModal.modalContainer} onClick={handleContainerClick}>
                     <div className={loginModal.crossButton} onClick={closeModal}>X</div>
                     <div className={loginModal.heading}>Register to SwipTory</div>

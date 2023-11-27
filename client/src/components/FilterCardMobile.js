@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext} from 'react';
 import CategoryContext from '../Utilities/CategoryContext';
 import style from './FilterCardMobile.module.css';
 import all from '../assets/images/All.jpg';
