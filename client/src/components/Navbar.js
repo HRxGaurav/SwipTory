@@ -18,14 +18,13 @@ import IsMobileView from '../Utilities/IsMobileView';
 import crossButton from '../assets/icons/crossBlackButton.svg';
 
 
-
 const Navbar = () => {
 
     const [showProfile, setShowProfile] = useState(false);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [showRegisterModal, setShowRegisterModal] = useState(false);
     const [showStoryPostModal, setShowStoryPostModal] = useState(false);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
     const [isUserLoggedin, setIsUserLoggedin] = useContext(LogContext);
     const [loginModal, setLoginModal] = useContext(LoginModalContext);
     const [userName, setUserName] = useState("");

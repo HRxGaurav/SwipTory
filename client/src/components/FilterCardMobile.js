@@ -31,7 +31,6 @@ const FilterCardMobile = () => {
   const handleCardClick = (index) => {
     setSelectedCard(index);
     setSelectedCategory(CardsData[index].value)
-    console.log(selectedCategory);
   };
 
 

@@ -21,7 +21,6 @@ const fetchStoriesByCategory = async ( category, page) => {
       }
     } catch (error) {
       console.error('Error during story fetch:', error);
-      console.log("here");
       return { success: false, error: 'Server error' };
     }
 

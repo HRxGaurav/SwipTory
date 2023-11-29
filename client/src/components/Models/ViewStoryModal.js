@@ -130,7 +130,6 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
           if (response.ok) {
             // If the request is successful, update the UI or perform any necessary actions
             const updatedStory = await response.json();
-            console.log('Updated Story:', updatedStory.story);
             setLikeState(updatedStory.story.likes);
             setbookmarkState(updatedStory.story.bookmarks);
           } else {

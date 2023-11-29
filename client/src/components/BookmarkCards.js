@@ -114,7 +114,6 @@ const BookmarkCards = () => {
       const { success, data } = await fetchBookmarkedStories(page);
   
       if (success) {
-        console.log(data);
         setStories(data?.stories);
         setRemainStoriesCount(data?.remainStoriesCount);
         setPage(page + 1);
