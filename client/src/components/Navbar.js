@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import navbar from './Navbar.module.css'
-import hamburger from '../assets/icons/hamburger.svg'
-import userIcon from '../assets/icons/user.png'
-import bookmarkIcon from '../assets/icons/bookmark.svg'
+import navbar from './Navbar.module.css';
+import hamburger from '../assets/icons/hamburger.svg';
+import userIcon from '../assets/icons/user.png';
+import bookmarkIcon from '../assets/icons/bookmark.svg';
 import LoginModal from './Models/LoginModal';
 import RegisterModal from './Models/RegisterModal';
 import AddStoryModel from './Models/AddStoryModel';
@@ -13,9 +13,9 @@ import LoginModalContext from '../Utilities/LoginModalContext';
 import toast from 'react-hot-toast';
 import Cookies from 'js-cookie';
 import checkLoggedin from '../APIs/checkLoggedin';
-import Loader from './Models/Loader'
+import Loader from './Models/Loader';
 import IsMobileView from '../Utilities/IsMobileView';
-import crossButton from '../assets/icons/crossBlackButton.svg'
+import crossButton from '../assets/icons/crossBlackButton.svg';
 
 
 
@@ -67,7 +67,7 @@ const Navbar = () => {
                 <div className={navbar.buttons}>
 
                     {!isUserLoggedin && <><div className={navbar.register} onClick={() => { setShowRegisterModal(!showRegisterModal) }}> Register Now</div>
-                        <div className={navbar.login} onClick={() => { setShowLoginModal(!showLoginModal) }}> Sign In </div></>}
+                        <div className={navbar.login} onClick={() => { setShowLoginModal(!showLoginModal) }} > Sign In </div></>}
 
                     {isUserLoggedin && <><div className={navbar.bookmark} onClick={() => (navigate('/bookmark'))}> <img src={bookmarkIcon} alt='bookmark' className={navbar.bookmarkIcon} />Bookmarks</div>
                         <div className={navbar.addStory} onClick={() => { setShowStoryPostModal(!showRegisterModal) }}> Add story</div>
@@ -77,18 +77,18 @@ const Navbar = () => {
 
                 </div>
             </div>
-                {(showLoginModal || loginModal) && <LoginModal closeModalState={setShowLoginModal} />}
-                {showRegisterModal && <RegisterModal closeModalState={setShowRegisterModal} closeModalMobileState={setShowProfile}/>}
+                {(showLoginModal || loginModal) && <LoginModal closeModalState={setShowLoginModal} closeModalMobileState={setShowProfile} />}
+                {showRegisterModal && <RegisterModal closeModalState={setShowRegisterModal} closeModalMobileState={setShowProfile} />}
                 {showStoryPostModal && <AddStoryModel closeModalState={setShowStoryPostModal} buttonName='Post' />}
                 {showStoryPostModal && <AddStoryMobileModel closeModalState={setShowStoryPostModal} buttonName='Post' />}
 
                 {showProfile && <div className={navbar.profileDiv}>
-                {isUserLoggedin && <div className={navbar.userName}>{userName}</div>}
-                {isUserLoggedin && <div className={navbar.logout} onClick={logout}>Logout</div>}
-            </div>}
+                    {isUserLoggedin && <div className={navbar.userName}>{userName}</div>}
+                    {isUserLoggedin && <div className={navbar.logout} onClick={logout}>Logout</div>}
+                </div>}
                 {loading && <Loader />}</>
 
-// ---------------------------------------------------------------------------mobile View code start-------------------------------------------------------------------------
+                // ---------------------------------------------------------------------------mobile View code start-------------------------------------------------------------------------
                 :
 
 
@@ -102,25 +102,25 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {showProfile && <div className={navbar.profileDivMobile}>
-                <img src={crossButton} alt='cross' className={navbar.crossButtonRegister} onClick={() => (setShowProfile(!showProfile))}/>
-                    {!isUserLoggedin && <><div className={navbar.loginMobileRegister} onClick={() => { setShowLoginModal(!showLoginModal) }}> Login </div>
-                        <div className={navbar.registerMobile} onClick={() => { setShowRegisterModal(!showRegisterModal) }}> Register</div></>}
+                    {showProfile && <div className={navbar.profileDivMobile}>
+                        <img src={crossButton} alt='cross' className={navbar.crossButtonRegister} onClick={() => (setShowProfile(!showProfile))} />
+                        {!isUserLoggedin && <><div className={navbar.loginMobileRegister} onClick={() => { setShowLoginModal(!showLoginModal) }}> Login </div>
+                            <div className={navbar.registerMobile} onClick={() => { setShowRegisterModal(!showRegisterModal) }}> Register</div></>}
 
 
 
-                    {isUserLoggedin && <>
-                        <img src={crossButton} alt='cross' className={navbar.crossButton} onClick={() => (setShowProfile(!showProfile))}/>
-                        <div style={{ display: 'flex', marginTop:'-42px', alignItems:'start'}}><div><img src={userIcon} alt='userIcon' className={navbar.userIconMobile} /></div>
-                            <div className={navbar.userName}>{userName}</div>
-                        </div>
+                        {isUserLoggedin && <>
+                            <img src={crossButton} alt='cross' className={navbar.crossButton} onClick={() => (setShowProfile(!showProfile))} />
+                            <div style={{ display: 'flex', marginTop: '-42px', alignItems: 'start' }}><div><img src={userIcon} alt='userIcon' className={navbar.userIconMobile} /></div>
+                                <div className={navbar.userName}>{userName}</div>
+                            </div>
 
-                        <div className={navbar.addStoryMobile} onClick={() => { navigate('/your_story') }}> Your story</div>
-                        <div className={navbar.bookmarkMobile} onClick={() => { setShowStoryPostModal(!showRegisterModal) }}> Add story</div>
-                        <div className={navbar.bookmarkMobile} onClick={() => (navigate('/bookmark'))}> <img src={bookmarkIcon} alt='bookmark' className={navbar.bookmarkIcon} />Bookmarks</div>
-                        <div className={navbar.logoutMobile} onClick={logout}>Logout</div>
-                    </>}
-                </div>}
+                            <div className={navbar.addStoryMobile} onClick={() => { navigate('/your_story') }}> Your story</div>
+                            <div className={navbar.bookmarkMobile} onClick={() => { setShowStoryPostModal(!showRegisterModal) }}> Add story</div>
+                            <div className={navbar.bookmarkMobile} onClick={() => (navigate('/bookmark'))}> <img src={bookmarkIcon} alt='bookmark' className={navbar.bookmarkIcon} />Bookmarks</div>
+                            <div className={navbar.logoutMobile} onClick={logout}>Logout</div>
+                        </>}
+                    </div>}
 
 
                     {(showLoginModal || loginModal) && <LoginModal closeModalState={setShowLoginModal} closeModalMobileState={setShowProfile} />}

@@ -123,6 +123,7 @@ const Stories = ({category, title}) => {
     return (
         <> 
             {loading ? <Loader/> : <><div className={style.yourStory}>{`Top Stories About ${title} `}</div>
+                {stories.length<1 && <div className={style.nodata}>No stories Available</div>}
                 <div className={style.main}>
                     {stories.map((story) => (
                         <StoryCards id={story._id} key={story._id}  imageUrl={story.slides[0].imageUrl} heading={story.slides[0].heading} description={story.slides[0].description} isEditable={story.isEditable} rawData={story} />
