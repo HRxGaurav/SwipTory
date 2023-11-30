@@ -6,7 +6,21 @@ import AddStoryModel from './Models/AddStoryModel';
 import AddStoryMobileModel from './Models/AddStoryMobileModel';
 import ViewStoryModal from './Models/ViewStoryModal';
 import IsMobileView from '../Utilities/IsMobileView'
-import {NoData} from './BookmarkCards'
+import { useNavigate } from 'react-router-dom';
+import noDataImage from '../assets/icons/Curiosity.png'
+
+const NoData = ({topHeading}) => {
+  const navigate = useNavigate();
+return (
+  <>
+     <div className={yourStory.noCardMain}>
+     <div className={yourStory.text}>{topHeading}</div>
+      <img src={noDataImage} alt='no Bookmark' className={yourStory.icon} />
+      <div className={yourStory.home} onClick={()=>(navigate('/'))}> Back to Home</div>
+      </div>
+  </>
+)
+}
 
 const StoryCards = ({id, imageUrl,heading, description, isEditable, rawData} ) => {
   const [showEditModal, setShowEditModal] = useState(false);
