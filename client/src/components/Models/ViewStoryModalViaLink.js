@@ -63,7 +63,7 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
     const [progress, setProgress] = useState(0);
     const [isUserLoggedin,setIsUserLoggedin] = useContext(LogContext);
     const [loginModal, setLoginModal] = useContext(LoginModalContext);
-    const duration = 20000;
+    const duration = 50000;
     const { bookmarks, slides, _id, addedBy, likes}=rawData
     const navigate=useNavigate();
     const length = slides.length;
@@ -173,7 +173,6 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
         }
     
         try {
-          // Make a request to the backend to toggle the interaction status (like or bookmark)
           const storyId = _id;
           const response = await fetch(`${process.env.REACT_APP_BACKEND}/update_likes_bookmark`, {
             method: 'POST',
@@ -185,7 +184,6 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
           });
     
           if (response.ok) {
-            // If the request is successful, update the UI or perform any necessary actions
             const updatedStory = await response.json();
             console.log('Updated Story:', updatedStory.story);
             setLikeState(updatedStory.story.likes);
@@ -254,7 +252,7 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
 
 
             <div className={style.modalBackgroundMobile} >
-                <img src={prevSlideButton} alt='prevSlideButton' style={{marginRight:"140px"}}  onClick={prevSlide} className={style.slideButton}/>
+            <div src={prevSlideButton} alt='prevSlideButton'   onClick={prevSlide} className={style.nextSlide}></div>
                 <div className={style.modalContainerMobile} >
 
                     <div className={style.progressBarFlex}>
@@ -287,7 +285,7 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
                     <img onClick={Like} src={likeState.includes(addedBy) ? likeRedButton : likeWhiteButton} alt="likeWhiteButton" className={style.likeButton}/>
                     <div className={style.likeCount}> {likeState.length}</div>
                 </div>
-                        <img src={nextSlideButton} alt='nextSlideButton' style={{marginLeft:"140px"}} onClick={nextSlide} className={style.slideButton}/>
+                <div src={nextSlideButton} alt='nextSlideButton' className={style.nextSlide} onClick={nextSlide} > </div>
             </div>}
 
         </>,

@@ -172,3 +172,10 @@
     }
 
 }
+
+.nextSlide{
+    z-index: 10;
+    background-color: transparent;
+    height: 70%;
+    width: 50%;
+}

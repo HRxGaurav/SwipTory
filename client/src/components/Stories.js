@@ -79,7 +79,7 @@ const StoryCards = ({ id, imageUrl, heading, description, isEditable, rawData })
 
 const Stories = ({category, title}) => {
     const [stories, setStories] = useState([]);
-    const [isUserLoggedin] = useContext(LogContext);
+    // const [isUserLoggedin] = useContext(LogContext);
     const [remainStoriesCount, setRemainStoriesCount] = useState(0);
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true);
@@ -87,7 +87,7 @@ const Stories = ({category, title}) => {
     useEffect(() => {
         // Fetch initial stories when the component mounts
         fetchInitialStories();
-    }, [isUserLoggedin]);
+    }, []);
 
     
 

@@ -25,7 +25,7 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
     const [progress, setProgress] = useState(0);
     const [isUserLoggedin] = useContext(LogContext);
     const [loginModal, setLoginModal] = useContext(LoginModalContext);
-    const duration = 20000;
+    const duration = 50000;
     const { bookmarks, slides, _id, addedBy, likes}=rawData
     const length = slides.length;
 
@@ -59,18 +59,18 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
         let intervalId;
 
         const startAnimation = () => {
-            const increment = (100 / (duration / 1000)); // Calculate increment based on duration in seconds
+            const increment = (100 / (duration / 1000)); 
 
             intervalId = setInterval(() => {
                 setProgress((prevProgress) => {
                     if (prevProgress >= 100) {
                         clearInterval(intervalId);
                         if (currentStoryIndex < length - 1) {
-                            nextSlide(); // Call nextSlide only if there are more slides
-                            return 0; // Reset progress to 0
+                            nextSlide(); 
+                            return 0; 
                         }else{
 
-                            return 100; // Keep progress at 100 if there are no more slides
+                            return 100; 
                         }
                     }
                     return prevProgress + increment;
@@ -116,7 +116,6 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
         }
     
         try {
-          // Make a request to the backend to toggle the interaction status (like or bookmark)
           const storyId = _id;
           const response = await fetch(`${process.env.REACT_APP_BACKEND}/update_likes_bookmark`, {
             method: 'POST',
@@ -128,7 +127,6 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
           });
     
           if (response.ok) {
-            // If the request is successful, update the UI or perform any necessary actions
             const updatedStory = await response.json();
             setLikeState(updatedStory.story.likes);
             setbookmarkState(updatedStory.story.bookmarks);
@@ -196,7 +194,7 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
 
 
             <div className={style.modalBackgroundMobile} >
-                <img src={prevSlideButton} alt='prevSlideButton' style={{marginRight:"140px"}}  onClick={prevSlide} className={style.slideButton}/>
+                <div src={prevSlideButton} alt='prevSlideButton'   onClick={prevSlide} className={style.nextSlide}></div>
                 <div className={style.modalContainerMobile} >
 
                     <div className={style.progressBarFlex}>
@@ -229,7 +227,7 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
                     <img onClick={Like} src={likeState.includes(addedBy) ? likeRedButton : likeWhiteButton} alt="likeWhiteButton" className={style.likeButton}/>
                     <div className={style.likeCount}> {likeState.length}</div>
                 </div>
-                        <img src={nextSlideButton} alt='nextSlideButton' style={{marginLeft:"140px"}} onClick={nextSlide} className={style.slideButton}/>
+                        <div src={nextSlideButton} alt='nextSlideButton' className={style.nextSlide} onClick={nextSlide} > </div>
             </div>}
 
         </>,
