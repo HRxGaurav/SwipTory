@@ -19,7 +19,7 @@ const Homepage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar key={`${forceUpdate}-nav`} />
       <FilterCards />
       {!IsMobileView() && isUserLoggedin && selectedCategory === 'all' && <YourStory />}
       {(selectedCategory === 'all' || selectedCategory === 'food') && ( <Stories key={`${forceUpdate}-food`} category={'food'} title={'food'} /> )}
