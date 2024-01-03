@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from 'react-dom';
-import { useNavigate } from 'react-router-dom';
 import addStoryModel from './AddStoryModel.module.css';
 import toast from 'react-hot-toast';
 import createStory from "../../APIs/createStory";
@@ -61,7 +60,6 @@ const AddStoryModel = ({ closeModalState, postId, buttonName }) => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [error, setError] = useState("");
-  const navigate = useNavigate();
 
   const initialSlide = {
     heading: "",
@@ -308,7 +306,7 @@ const AddStoryModel = ({ closeModalState, postId, buttonName }) => {
             ))}
           </div>
 
-          {/* -----------------------------------------------------------------Silde form end -----------------------------------------------------------------------*/}
+          {/* -----------------------------------------------------------------Slide form end -----------------------------------------------------------------------*/}
           <div className={addStoryModel.errorText}>{error}</div>
           <div className={addStoryModel.buttons}>
             <div className={addStoryModel.moveButton}>

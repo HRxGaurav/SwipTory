@@ -28,6 +28,7 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
     const duration = 50000;
     const { bookmarks, slides, _id, addedBy, likes}=rawData
     const length = slides.length;
+    const currentUserId= Cookies.get('id');
 
     const closeModal = () => {
         closeModalState(false);
@@ -149,7 +150,6 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
 
 
 
-
     return ReactDOM.createPortal(
         <>
         
@@ -183,8 +183,8 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
 
                     <div className={style.heading}>{slides[currentStoryIndex].heading}</div>
                     <div className={style.para}>{slides[currentStoryIndex].description}</div>
-                    <img onClick={Bookmark} src={bookmarkState.includes(addedBy) ? bookmarkBlueButton : bookmark} alt="bookmark" className={style.bookmark}/>
-                    <img onClick={Like} src={likeState.includes(addedBy) ? likeRedButton : likeWhiteButton} alt="likeWhiteButton" className={style.likeButton}/>
+                    <img onClick={Bookmark} src={bookmarkState.includes(currentUserId) ? bookmarkBlueButton : bookmark} alt="bookmark" className={style.bookmark}/>
+                    <img onClick={Like} src={likeState.includes(currentUserId) ? likeRedButton : likeWhiteButton} alt="likeWhiteButton" className={style.likeButton}/>
                     <div className={style.likeCount}> {likeState.length}</div>
                 </div>
                         <img src={nextSlideButton} alt='nextSlideButton' style={{marginLeft:"140px"}} onClick={nextSlide} className={style.slideButton}/>
@@ -223,8 +223,8 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
 
                     <div className={style.typoDiv}><div className={style.headingMobile}>{slides[currentStoryIndex].heading}</div>
                     <div className={style.paraMobile}>{slides[currentStoryIndex].description}</div></div>
-                    <img onClick={Bookmark} src={bookmarkState.includes(addedBy) ? bookmarkBlueButton : bookmark} alt="bookmark" className={style.bookmark}/>
-                    <img onClick={Like} src={likeState.includes(addedBy) ? likeRedButton : likeWhiteButton} alt="likeWhiteButton" className={style.likeButton}/>
+                    <img onClick={Bookmark} src={bookmarkState.includes(currentUserId) ? bookmarkBlueButton : bookmark} alt="bookmark" className={style.bookmark}/>
+                    <img onClick={Like} src={likeState.includes(currentUserId) ? likeRedButton : likeWhiteButton} alt="likeWhiteButton" className={style.likeButton}/>
                     <div className={style.likeCount}> {likeState.length}</div>
                 </div>
                         <div src={nextSlideButton} alt='nextSlideButton' className={style.nextSlide} onClick={nextSlide} > </div>
