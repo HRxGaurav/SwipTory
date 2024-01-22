@@ -100,7 +100,7 @@ const ViewStoryModal = ({ closeModalState, rawData }) => {
     };
 
     const Share = ()=>{
-        navigator.clipboard.writeText(`${window.location.href}view_story/${_id}`)
+        navigator.clipboard.writeText(`${window.location.origin}/view_story/${_id}`)
             .then(() => {
                 toast.success('Link copied to clipboard')
             })
