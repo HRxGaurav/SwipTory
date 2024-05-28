@@ -21,6 +21,11 @@ connectDB();
 app.use(authRoutes)
 app.use(storyRoutes)
 
+
+app.get('/ping', (req, res) => {
+    res.send('Server is awake');
+});
+
 //JSON
 app.use(express.json()) 
 
